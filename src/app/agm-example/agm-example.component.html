@@ -1,0 +1,20 @@
+<div class="agm-container">
+  <h3>Angular Google Maps Example</h3>
+  <agm-map
+    [zoom]="5"
+    [latitude]="lat"
+    [longitude]="lng"
+    (mapReady)="onMapReady($event)"
+  >
+  </agm-map>
+  <br />
+  <mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let point of pointList">
+      {{ point.lat.toPrecision(5) }},
+      {{ point.lng.toPrecision(5) }}</mat-list-item
+    >
+  </mat-list>
+  <mat-card *ngIf="selectedArea > 0">
+    Selected Area: {{ selectedArea.toPrecision(5) }}m<sup>2</sup></mat-card
+  >
+</div>
