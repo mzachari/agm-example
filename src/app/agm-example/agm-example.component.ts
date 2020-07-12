@@ -80,6 +80,12 @@ export class AgmExampleComponent implements OnInit {
           self.drawingManager.setOptions({
             drawingControl: false,
           });
+
+          // set selected shape object
+          const newShape = event.overlay;
+          newShape.type = event.type;
+          this.setSelection(newShape);
+
         }
       }
     );
@@ -91,6 +97,18 @@ export class AgmExampleComponent implements OnInit {
         this.lng = position.coords.longitude;
       });
     }
+  }
+  clearSelection() {
+    if (this.selectedShape) {
+      this.selectedShape.setEditable(false);
+      this.selectedShape = null;
+      this.pointList = [];
+    }
+  }
+  setSelection(shape) {
+    this.clearSelection();
+    this.selectedShape = shape;
+    shape.setEditable(true);
   }
 
   deleteSelectedShape() {
