@@ -1,3 +1,5 @@
+This is a sample application which shows how to construct a polygonal region inside google maps and compute its area using angular google maps component.
+
 # AgmExample
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.18.
