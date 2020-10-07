@@ -21,3 +21,8 @@ button{
   border: none;
   border-radius: 10px;
 }
+.display-flex{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
